@@ -1,0 +1,39 @@
+# Data directory
+data/
+
+# SQLite database files
+*.db
+*.db-shm
+*.db-wal
+
+# Config file (keep example)
+configs/config.yaml
+
+# Binaries
+haystack-lite
+*.exe
+*.exe~
+*.dll
+*.so
+*.dylib
+
+# Test binary
+*.test
+
+# Output of the go coverage tool
+*.out
+
+# Go workspace file
+go.work
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+.vscode
+.kiro
+
+haystack-lite

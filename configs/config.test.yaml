@@ -1,0 +1,31 @@
+# Haystack-Lite 测试环境配置
+
+server:
+  port: ":8080"
+
+storage:
+  data_dir: "./data"
+  max_volume_size: 1073741824
+  volume_file_ext: ".dat"
+  sync_interval: 60
+  read_only: false
+
+database:
+  type: "sqlite"
+  sqlite:
+    path: "./data/haystack.db"
+  mysql:
+    host: "127.0.0.1"
+    port: 3306
+    user: "root"
+    password: "password"
+    database: "haystack"
+    charset: "utf8mb4"
+    parse_time: true
+    loc: "Local"
+
+compaction:
+  enabled: true
+  interval: 60
+  deleted_threshold: 0.3
+  min_volume_size: 1048576

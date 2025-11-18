@@ -1,0 +1,50 @@
+# Haystack-Lite 配置文件示例
+# 复制此文件为 config.yaml 并修改配置
+
+# 服务器配置
+server:
+  port: ":8080"
+
+# 存储配置
+storage:
+  data_dir: "./data"
+  max_volume_size: 1073741824     # 1GB = 1024 * 1024 * 1024
+  volume_file_ext: ".dat"
+  sync_interval: 60
+  read_only: false
+
+# 数据库配置
+database:
+  # 选择数据库类型：sqlite（默认，零配置） 或 mysql（高性能）
+  type: "sqlite"
+  
+  # SQLite 配置（推荐用于开发和单机部署）
+  sqlite:
+    path: "./data/haystack.db"
+  
+  # MySQL 配置（推荐用于生产环境）
+  # 使用 MySQL 时，将上面的 type 改为 "mysql"
+  mysql:
+    host: "127.0.0.1"
+    port: 3306
+    user: "root"
+    password: "password"
+    database: "haystack"
+    charset: "utf8mb4"
+    parse_time: true
+    loc: "Local"
+
+# 压缩配置
+compaction:
+  enabled: true                    # 是否启用自动压缩
+  interval: 3600                   # 压缩检查间隔（秒），默认 1 小时
+  deleted_threshold: 0.3           # 删除率阈值（0-1），超过此比例才压缩
+  min_volume_size: 10485760        # 最小压缩体积（字节），默认 10MB
+
+# 配置说明：
+# 1. SQLite（默认）：零配置，适合开发测试和单机部署
+# 2. MySQL：需要先启动 MySQL 服务，适合生产环境和高并发场景
+# 3. 压缩功能：自动回收已删除文件占用的空间
+#    - 测试环境：可设置 interval: 60, min_volume_size: 1048576 (1MB)
+#    - 生产环境：保持默认值即可
+# 4. 修改配置后需要重启服务
