@@ -180,8 +180,6 @@ compaction:
   min_volume_size: 10485760       # 最小压缩体积（10MB）
 ```
 
-详细配置见 [docs/CONFIG.md](docs/CONFIG.md)
-
 ## 系统架构
 
 ### 分层设计
@@ -219,8 +217,6 @@ data/
 └── chunks/               # 分片上传临时目录
 ```
 
-详细设计见 [docs/ARCHITECTURE.md](docs/ARCHITECTURE.md)
-
 ## 项目结构
 
 ```
@@ -240,25 +236,6 @@ haystack-lite/
 ```
 
 > 本项目遵循 [Standard Go Project Layout](https://github.com/golang-standards/project-layout)
-
-## 文档导航
-
-### 快速入门
-- [快速开始](docs/QUICKSTART.md) - 5 分钟上手指南
-- [API 文档](docs/API.md) - REST API 接口说明
-
-### 高级功能
-- [新功能文档](docs/NEW_FEATURES.md) - 批量操作、分片上传、后台压缩
-- [S3 API](docs/S3_API.md) - S3 兼容 API 使用指南
-- [WebDAV](docs/WEBDAV.md) - WebDAV 协议支持
-- [文件预览](docs/PREVIEW.md) - 在线预览功能
-
-### 配置与部署
-- [配置说明](docs/CONFIG.md) - 配置文件详解
-- [架构设计](docs/ARCHITECTURE.md) - 系统设计和技术选型
-
-### 版本历史
-- [更新日志](docs/CHANGELOG.md) - 版本更新记录
 
 ## 开发指南
 
